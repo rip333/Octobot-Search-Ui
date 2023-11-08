@@ -4,6 +4,7 @@ import SearchBar from './components/search-bar/SearchBar';
 import React, { useState } from 'react';
 import Results from './components/results/Results';
 import { Card } from './interfaces/Card';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [searchResults, setSearchResults] = useState<Card[]>([]);
@@ -17,8 +18,13 @@ function App() {
       <header className="App-header">
         OCTOBOT
         <SearchBar onSearch={handleSearchResults} />
-        <Results results={searchResults} />
       </header>
+      <body>
+        <Results results={searchResults} />
+      </body>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
