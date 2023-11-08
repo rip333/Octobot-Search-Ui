@@ -1,0 +1,17 @@
+/* Results.css */
+.resultsContainer {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+  }
+  
+  .cardImage {
+    width: 20%; /* This will make the image take up the entire grid item space */
+    height: auto;
+    border-radius: 1.25rem;
+    padding: 10px;
+  }
+  

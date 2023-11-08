@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import styles from './Results.module.css'; // If using CSS Modules
 import { Card } from '../../interfaces/Card';
 
 interface ResultsProps {
@@ -16,20 +16,22 @@ const Results: React.FC<ResultsProps> = ({ results }) => {
     };
 
     return (
-        <div>
-            {results.length > 0 ? (
-                <ul>
-                    {results.map((card, index) => (
-                        <li key={index}>
-                            <img src={getImageUrl(card)} alt={card.Name} />
-
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No results to display</p>
-            )}
-        </div>
+        <div className={styles.resultsContainer}>
+        {results.length > 0 ? (
+            <ul className={styles.resultsList}>
+                {results.map((card, index) => (
+                    <img
+                    key={index}
+                    src={getImageUrl(card)}
+                    alt={card.Name}
+                    className={styles.cardImage}
+                />
+                ))}
+            </ul>
+        ) : (
+            <p>No results to display</p>
+        )}
+    </div>
     );
 };
 
