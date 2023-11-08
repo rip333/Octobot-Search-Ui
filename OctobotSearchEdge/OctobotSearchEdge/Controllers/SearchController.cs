@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Models.Cerebro;
+using Services.Cerebro;
 
 namespace OctobotSearchEdge.Controllers
 {
@@ -8,17 +10,26 @@ namespace OctobotSearchEdge.Controllers
 	{
 
 		private readonly ILogger<SearchController> _logger;
+		private readonly ICerebroService _cerebroService;
 
-		public SearchController(ILogger<SearchController> logger)
+		public SearchController(ILogger<SearchController> logger, ICerebroService cerebroService)
 		{
 			_logger = logger;
+			_cerebroService = cerebroService;
 		}
 
 		[HttpGet]
-        public IActionResult Get(string query)
+        public async Task<IActionResult> Get(string query)
         {
-            // Your search logic here
-            return Ok("You searched for: " + query);
+			var parameters = Search.Search.GetParametersFromText(query);
+			var response = await _cerebroService.SearchCards(parameters);
+			var cardList = response.ToList();
+
+			foreach(var card in cardList) {
+				card.ImageUrl = card.GetImageUrl();
+			}
+
+            return Ok(cardList);
         }
 	}
 }

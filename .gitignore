@@ -14,3 +14,5 @@
 /*.log
 #Rider settings
 **/.idea
+
+node_modules
