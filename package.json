@@ -50,5 +50,5 @@
     "@types/express": "^4.17.21",
     "concurrently": "^8.2.2"
   },
-  "homepage": "https://<username>.github.io/<repository-name>/"
+  "homepage": "https://rip333.github.io/Octobot-Search-Ui/"
 }
