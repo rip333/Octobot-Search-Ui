@@ -2,23 +2,29 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Card } from '../../interfaces/Card';
 import styles from './SearchBar.module.css'; // Import the CSS Module
+import { createSearchQuery } from './searchUtils';
 
 interface SearchBarProps {
     onSearch: (results: Card[]) => void;
+    incomplete: boolean;
+    origin: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch, incomplete, origin }) => {
     const [query, setQuery] = useState('');
 
     const handleSearch = async (event: React.FormEvent) => {
         event.preventDefault(); // Prevent the default form submit action
 
         try {
-            const response = await axios.get(`https://cerebro-beta-bot.herokuapp.com/cards`, {
-                params: { name: query },
-                // In a real application, you would also likely include headers such as an Authorization header
-            });
+            const filterOptions = {
+                incomplete: incomplete,
+                origin: origin,
+            };
+            const searchQuery = createSearchQuery(query, filterOptions);
 
+            const response = await axios.get(`https://cerebro-beta-bot.herokuapp.com/query?${searchQuery}`);
+    
             // Handle response here
             onSearch(response.data);
         } catch (error) {

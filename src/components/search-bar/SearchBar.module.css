@@ -50,9 +50,8 @@ html {
 }
 .searchbox svg {
   position: absolute;
-  left: var(--side-margin);
-  top: var(--icon-vertical-margin);
-  bottom: var(--icon-vertical-margin);
+  left: 2%;
+  top: 30%; 
 }
 .searchbox input[type="search"] {
   padding-left: calc( var(--side-margin) + var(--icon-size) + 4px);
