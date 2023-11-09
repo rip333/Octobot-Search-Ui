@@ -21,7 +21,7 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ incomplete, setIncomplete
                     />
                     <span className={styles.labelText}>Incomplete</span>
                 </label>
-            </div>
+            </div>|&nbsp;&nbsp;
             <div className={styles.radioContainer}>
                 Origin:
                 <label>

@@ -1,6 +1,5 @@
 // searchUtils.ts
 
-// Define the parameters to search across globally if they don't change
 const searchParameters = [
     'ru',
     'cl',
@@ -10,29 +9,36 @@ const searchParameters = [
     'tr'
 ];
 
-// Function to create search queries based on tokens for multiple parameters
 export const createSearchQuery = (searchString: string, filterOptions: { incomplete: boolean; origin: string }) => {
-    // Split the search string into tokens by spaces
-    const tokens = searchString.split(' ');
-    
-    // For each token, create a query part that checks all parameters
+    // Use a regular expression to match phrases inside quotes or single words
+    const regex = /"[^"]+"|\S+/g;
+    const tokens = [];
+
+    let match;
+    while ((match = regex.exec(searchString)) !== null) {
+        tokens.push(match[0]);
+    }
+
+    // Process each token
     const queryParts = tokens.map(token => {
-        const encodedToken = encodeURIComponent(token);
+        // Remove quotes for the current token if it's a phrase
+        const processedToken = token.replace(/"/g, '');
+        const encodedToken = encodeURIComponent(processedToken);
         return searchParameters.map(param => `${param}:"${encodedToken}"`).join('|');
     });
-    
+
     // Combine query parts with OR operators
     const combinedQuery = queryParts.join('|');
     
     // Add the filter options to the query
     const filterQueries = [];
-    if(!filterOptions.incomplete) {
+    if (!filterOptions.incomplete) {
         filterQueries.push(`i:"false"`);
     }
-    if(filterOptions.origin !== "all") {
+    if (filterOptions.origin !== "all") {
         filterQueries.push(`o:"${filterOptions.origin === "official"}"`);
     }
     
-    // Final combined query with filters and separate text parameters
+    // Final combined query with filters
     return `input=(${combinedQuery})${filterQueries.length > 0 ? '%26' + filterQueries.join('%26') : ''}`;
 };

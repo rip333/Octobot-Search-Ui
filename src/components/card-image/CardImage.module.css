@@ -1,0 +1,14 @@
+.cardImage {
+    max-width: 500px;
+    max-height: 560px;
+    min-height: 300px;
+    height: auto;
+    border-radius: 1.65rem;
+    padding: 10px;
+    filter: drop-shadow(0 0 0.2rem);
+    transition: filter 0.3s ease;
+}
+
+.cardImage:hover {
+    filter: drop-shadow(0 0 0.75rem);
+}

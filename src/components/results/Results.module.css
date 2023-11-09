@@ -6,11 +6,3 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: black;
   }
-  
-  .cardImage {
-    width: 20%; /* This will make the image take up the entire grid item space */
-    height: auto;
-    border-radius: 1.65rem;
-    padding: 10px;
-  }
-  
