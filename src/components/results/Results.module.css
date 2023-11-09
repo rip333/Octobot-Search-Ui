@@ -1,8 +1,20 @@
 /* Results.css */
 .resultsContainer {
-    padding: 1rem;
-    margin: 1rem;
-    background-color: #f7f7f7;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: black;
-  }
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.NoResults {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-weight: 300;
+  color: rgb(61, 61, 61);
+}
+
+.NoResults img {
+  width: 10%;
+  filter: grayscale(50%);
+}

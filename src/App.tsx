@@ -12,17 +12,17 @@ function App() {
   const [searchResults, setSearchResults] = useState<Card[]>([]);
   const [incomplete, setIncomplete] = useState(false);
   const [origin, setOrigin] = useState('official'); // 'official', 'unofficial', 'all'
+  const [searchPerformed, setSearchPerformed] = useState(false); // Add this line
 
   const handleSearchResults = (results: Card[]) => {
     setSearchResults(results);
+    setSearchPerformed(true);
   };
 
   const resetToHomePage = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault(); // Prevent default anchor action
     setSearchResults([]); // Reset search results
-    // Reset other states if necessary
-    // setIncomplete(false);
-    // setOrigin('official');
+    setSearchPerformed(false);
   };
 
   return (
@@ -40,7 +40,7 @@ function App() {
         />
       </header>
       <body>
-        <Results results={searchResults} />
+        {searchPerformed && <Results results={searchResults} />}
       </body>
       <footer>
         <Footer />
