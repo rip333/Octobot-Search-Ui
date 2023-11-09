@@ -1,0 +1,31 @@
+.Octobot {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.OctobotHeader {
+  background-color: #001126;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(34px);
+  color: white;
+  position: relative;
+}
+.OctobotLabel {
+  text-decoration: none;
+  color: inherit;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 55px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(82, 82, 82)
+}
+
+.OctobotLink {
+  color: #61dafb;
+}
+
+.OctobotLogo {
+  height: 350px;
+}
