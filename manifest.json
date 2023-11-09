@@ -1,0 +1,10 @@
+{
+  "short_name": "Octobot react App",
+  "name": "OCTOBOT REACT APP",
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
