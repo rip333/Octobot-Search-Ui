@@ -17,7 +17,6 @@ export interface Card {
   Type: string;
   Unique: boolean;
   ImageUrl: string;
-  // Note: GetImageUrl method logic needs to be implemented in TypeScript outside the interface.
 }
 
 interface Printing {

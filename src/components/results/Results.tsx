@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Results.module.css';
 import { Card } from '../../interfaces/Card';
 import CardImage from '../card-image/CardImage';
-import sadSpidey from "./sad-spidey.png";
 
 interface ResultsProps {
     results: Array<Card>; // Use a more specific type depending on your actual data structure
@@ -23,7 +22,6 @@ const Results: React.FC<ResultsProps> = ({ results }) => {
     }
     return (
         <div className={styles.NoResults}>
-            <img src={sadSpidey}></img>
             <p>No results to display.</p>
         </div>
     );
