@@ -13,7 +13,7 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ incomplete, setIncomplete
     return (
         <div className={styles.container}>
             <div className={styles.checkboxContainer}>
-                <label>
+                <label title={"Differentiate between products that have been officially released and those that have yet to be officially released"}>
                     <input
                         type="checkbox"
                         checked={incomplete}
@@ -24,6 +24,16 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ incomplete, setIncomplete
             </div>
             <div className={styles.radioContainer}>
                 Origin:
+                <label>
+                    <input
+                        type="radio"
+                        name="origin"
+                        value="all"
+                        checked={origin === 'all'}
+                        onChange={() => setOrigin('all')}
+                    />
+                    <span className={styles.labelText}>All</span>
+                </label>
                 <label>
                     <input
                         type="radio"
@@ -43,16 +53,6 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ incomplete, setIncomplete
                         onChange={() => setOrigin('unofficial')}
                     />
                     <span className={styles.labelText}>Unofficial</span>
-                </label>
-                <label>
-                    <input
-                        type="radio"
-                        name="origin"
-                        value="all"
-                        checked={origin === 'all'}
-                        onChange={() => setOrigin('all')}
-                    />
-                    <span className={styles.labelText}>All</span>
                 </label>
             </div>
         </div>
