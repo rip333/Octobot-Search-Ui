@@ -29,7 +29,7 @@ function App() {
     <div className={styles.Octobot}>
       <header className={styles.OctobotHeader}>
         <a href="#" onClick={resetToHomePage} className={styles.OctobotLabel}>
-          <img src={logo} className={styles.OctobotLogo} alt="logo" />
+          {searchPerformed ? <span>OCTOBOT</span> : <img src={logo} className={styles.OctobotLogo} alt="logo" />}
         </a>
         <SearchBar onSearch={handleSearchResults} incomplete={incomplete} origin={origin} />
         <FilterOptions
