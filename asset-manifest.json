@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Octobot-Search-Ui/static/css/main.02b81cd6.css",
-    "main.js": "/Octobot-Search-Ui/static/js/main.ca48a1d4.js",
+    "main.css": "/Octobot-Search-Ui/static/css/main.8fdbd099.css",
+    "main.js": "/Octobot-Search-Ui/static/js/main.c061b9a3.js",
     "static/js/787.a629d3e3.chunk.js": "/Octobot-Search-Ui/static/js/787.a629d3e3.chunk.js",
-    "static/media/logo.png": "/Octobot-Search-Ui/static/media/logo.947bc28f6cd8b93c251f.png",
+    "static/media/logo.png": "/Octobot-Search-Ui/static/media/logo.f9a04ee93ef84a1a3d54.png",
     "static/media/icon-text.png": "/Octobot-Search-Ui/static/media/icon-text.13a60ef646353d4d019f.png",
     "index.html": "/Octobot-Search-Ui/index.html",
-    "main.02b81cd6.css.map": "/Octobot-Search-Ui/static/css/main.02b81cd6.css.map",
-    "main.ca48a1d4.js.map": "/Octobot-Search-Ui/static/js/main.ca48a1d4.js.map",
+    "main.8fdbd099.css.map": "/Octobot-Search-Ui/static/css/main.8fdbd099.css.map",
+    "main.c061b9a3.js.map": "/Octobot-Search-Ui/static/js/main.c061b9a3.js.map",
     "787.a629d3e3.chunk.js.map": "/Octobot-Search-Ui/static/js/787.a629d3e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02b81cd6.css",
-    "static/js/main.ca48a1d4.js"
+    "static/css/main.8fdbd099.css",
+    "static/js/main.c061b9a3.js"
   ]
 }
