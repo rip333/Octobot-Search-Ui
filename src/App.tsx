@@ -7,6 +7,7 @@ import { Card } from './interfaces/Card';
 import Footer from './components/footer/Footer';
 import FilterOptions from './components/filters/FilterOptions';
 import logo from './logo.png';
+import iconText from './icon-text.png';
 
 function App() {
   const [searchResults, setSearchResults] = useState<Card[]>([]);
@@ -29,7 +30,7 @@ function App() {
     <div className={styles.Octobot}>
       <header className={styles.OctobotHeader}>
         <a href="#" onClick={resetToHomePage} className={styles.OctobotLabel}>
-          {searchPerformed ? <span>OCTOBOT</span> : <img src={logo} className={styles.OctobotLogo} alt="logo" />}
+          {searchPerformed ? <img src={iconText} className={styles.LogoText} alt="logo" /> : <img src={logo} className={styles.OctobotLogo} alt="logo" />}
         </a>
         <SearchBar onSearch={handleSearchResults} incomplete={incomplete} origin={origin} />
         <FilterOptions

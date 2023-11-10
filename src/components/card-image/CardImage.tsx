@@ -1,15 +1,14 @@
 // CardImage.tsx
-import React, { useState, useEffect } from 'react';
-import styles from './CardImage.module.css'; // Make sure to create a corresponding CSS module file for styling
+import React from 'react';
 import { Card } from '../../interfaces/Card';
+import { AsyncImage } from 'loadable-image'
+import styles from './CardImage.module.css';
 
 interface CardImageProps {
   card: Card;
 }
 
 const CardImage: React.FC<CardImageProps> = ({ card }) => {
-  const [loaded, setLoaded] = useState(false);
-
   const getImageUrl = (card: Card): string => {
     const imageBaseUrl = "https://cerebrodatastorage.blob.core.windows.net/cerebro-cards/";
     return card.Official
@@ -17,17 +16,16 @@ const CardImage: React.FC<CardImageProps> = ({ card }) => {
       : `${imageBaseUrl}unofficial/${card.Id}.jpg`;
   };
 
-  const handleImageLoaded = () => {
-    setLoaded(true);
-  };
+  let style = card.Type.includes("Side Scheme") ? { width: 515, height: 365 } : { width: 365, height: 515 };
 
   return (
-    <img
-      src={getImageUrl(card)}
-      alt={card.Name}
-      className={`${styles.cardImage} ${loaded ? '' : styles.loading}`}
-      onLoad={handleImageLoaded}
-    />
+    <div className={styles.image}>
+      <AsyncImage
+        src={getImageUrl(card)}
+        alt={card.Name}
+        style={style}
+      />
+    </div>
   );
 };
 
